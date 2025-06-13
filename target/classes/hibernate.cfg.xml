@@ -1,0 +1,19 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Cấu hình kết nối tới SQL Server -->
+        <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=test;integratedSecurity=true;encrypt=false;trustServerCertificate=true;</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+       
+        <!-- Các tùy chọn khác -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+       
+        <!-- Khai báo các entity -->
+        <mapping class="bmt2.NV"/>
+         <!-- <mapping class="test_DAO.Employee"/> -->
+    </session-factory>
+</hibernate-configuration>
